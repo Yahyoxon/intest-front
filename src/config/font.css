@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Cairo';
+  src: url('../../public/font/Roboto-Light.ttf') format('truetype'),
+    url('../../public/font/Roboto-Black.ttf') format('truetype'),
+    url('../../public/font/Roboto-BlackItalic.ttf') format('truetype'),
+    url('../../public/font/Roboto-Bold.ttf') format('truetype'),
+    url('../../public/font/Roboto-Regular.ttf') format('truetype'),
+    url('../../public/font/Roboto-Thin.ttf') format('truetype'),
+    url('../../public/font/Roboto-Medium.ttf') format('truetype');
+}
+* {
+  font-family: 'Cairo';
+}
