@@ -7,8 +7,9 @@ export const ProductCardWrapper = styled.div<{ horizontal?: boolean }>`
   flex-direction: column;
   gap: 18px;
   background-color: ${({ horizontal }) => (horizontal ? COLORS.white : '')};
-  padding: ${({ horizontal }) => (horizontal ? "1.5rem" : 0)};
-  border: ${({horizontal}) => horizontal ? `1px solid ${COLORS.borderColor}` : "none"}
+  padding: ${({ horizontal }) => (horizontal ? '1.5rem' : 0)};
+  border: ${({ horizontal }) =>
+    horizontal ? `1px solid ${COLORS.borderColor}` : 'none'};
 `;
 
 export const ProductCardImage = styled.div<{ horizontal?: boolean }>`

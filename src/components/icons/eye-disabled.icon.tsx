@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { IconType } from 'types/utility.types';
 
-const EyeDisabled:IconType = () => (
+const EyeDisabled: IconType = () => (
   <svg
     width="24"
     height="24"
@@ -16,5 +16,4 @@ const EyeDisabled:IconType = () => (
   </svg>
 );
 
-
-export default EyeDisabled
+export default EyeDisabled;

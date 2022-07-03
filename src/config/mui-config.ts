@@ -155,7 +155,7 @@ const theme = createTheme({
           boxShadow: 'none',
           fontSize: '1.125rem',
           fontWeight: 500,
-          textTransform: "none",
+          textTransform: 'none',
           '&:hover': {
             boxShadow: 'none',
           },
@@ -181,7 +181,7 @@ const theme = createTheme({
       },
     },
     MuiPaper: {
-    styleOverrides: {
+      styleOverrides: {
         root: {
           boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.06);',
         },

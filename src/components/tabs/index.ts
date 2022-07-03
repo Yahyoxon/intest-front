@@ -1,2 +1,2 @@
 // eslint-disable-next-line import/named
-export {StyledTab, StyledTabs, TabPanel} from "./tabs"
+export { StyledTab, StyledTabs, TabPanel } from './tabs';

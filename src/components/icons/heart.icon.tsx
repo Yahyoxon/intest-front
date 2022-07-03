@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { IconType } from 'types/utility.types';
 
-const HeartIcon:IconType = (props) => (
+const HeartIcon: IconType = (props) => (
   <svg
     width="24"
     height="24"
@@ -17,5 +17,4 @@ const HeartIcon:IconType = (props) => (
   </svg>
 );
 
-
-export default HeartIcon
+export default HeartIcon;

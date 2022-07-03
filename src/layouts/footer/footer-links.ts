@@ -3,16 +3,16 @@ import InstagramIcon from 'components/icons/instagram.icon';
 import TelegramIcon from 'components/icons/telegram.icon';
 import TiktokIcon from 'components/icons/tik-tok.icon';
 import YouTubeIcon from 'components/icons/yout-tube.icon';
-import PlayStore from 'assets/png/googleplay.png';
-import AppStore from 'assets/png/appstore.png';
+import PlayStore from 'assets/images/banner.jpg';
 
+const AppStore = PlayStore;
 interface FooterLinks {
-    title: string;
-    links: {
-        label?: string;
-        href: string;
-        img?: StaticImageData | string
-    }[]
+  title: string;
+  links: {
+    label?: string;
+    href: string;
+    img?: StaticImageData | string;
+  }[];
 }
 
 const footerLinks: FooterLinks[] = [

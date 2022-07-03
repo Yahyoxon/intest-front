@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const EyeDisabled = () => (
   <svg
@@ -15,5 +15,4 @@ const EyeDisabled = () => (
   </svg>
 );
 
-
-export default EyeDisabled
+export default EyeDisabled;

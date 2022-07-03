@@ -17,7 +17,7 @@ const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} {...props} />
 ))(({ theme }) => ({
   //   border: `1px solid ${theme.palette.divider}`,
-  boxShadow: "none",
+  boxShadow: 'none',
   borderRadius: theme.shape.borderRadius,
   border: `1px solid ${COLORS.borderColor}`,
   '&:not(:last-child)': {
@@ -29,15 +29,12 @@ const Accordion = styled((props: AccordionProps) => (
 }));
 
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
-  <MuiAccordionSummary
-    
-    {...props}
-  />
+  <MuiAccordionSummary {...props} />
 ))(({ theme }) => ({
-//   backgroundColor:
-//     theme.palette.mode === 'dark'
-//       ? 'rgba(255, 255, 255, .05)'
-//       : 'rgba(225, 225, 225)',
+  //   backgroundColor:
+  //     theme.palette.mode === 'dark'
+  //       ? 'rgba(255, 255, 255, .05)'
+  //       : 'rgba(225, 225, 225)',
   '& .MuiAccordionSummary-content': {
     marginLeft: theme.spacing(1),
   },
@@ -46,7 +43,7 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
   boxShadow: 'none',
-  borderTop: `1px solid ${COLORS.borderColor}`
+  borderTop: `1px solid ${COLORS.borderColor}`,
 }));
 
 const CustomizedAccordion: React.FC<CustomAccordionProps> = ({

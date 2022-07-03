@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 import React from 'react';
-import Placeholder from 'assets/png/placeholder.png';
+import Placeholder from 'assets/images/banner.jpg';
 import Image from 'next/image';
 import { CategoryCardWrapper, CategoryTitle } from './category-card.styles';
 

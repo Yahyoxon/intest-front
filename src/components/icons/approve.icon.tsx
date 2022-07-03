@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { IconType } from 'types/utility.types';
 
-const ApproveIcon:IconType = (props) => (
+const ApproveIcon: IconType = (props) => (
   <svg
     width="24"
     height="25"
@@ -29,4 +29,4 @@ const ApproveIcon:IconType = (props) => (
   </svg>
 );
 
-export default ApproveIcon
+export default ApproveIcon;

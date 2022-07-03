@@ -16,12 +16,12 @@ const WithCustomScrollBar = styled(Box)`
 
   ::-webkit-scrollbar-thumb {
     transition: all 0.3s;
-    background: #aaaaaa;
+    background: #aaa;
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #aaaaaa;
+    background: #aaa;
   }
 `;
 

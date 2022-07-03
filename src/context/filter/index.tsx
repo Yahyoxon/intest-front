@@ -1,4 +1,10 @@
-import React, { useEffect, useContext, useReducer, useMemo, useCallback } from 'react';
+import React, {
+  useEffect,
+  useContext,
+  useReducer,
+  useMemo,
+  useCallback,
+} from 'react';
 import reducer from './reducer';
 import {
   LOAD_PRODUCTS,
@@ -20,7 +26,7 @@ const initialState = {
     category: 'all',
     min_price: 0,
     max_price: 0,
-    year: 1990
+    year: 1990,
   },
 };
 
@@ -46,7 +52,7 @@ export const FilterProvider: React.FC = ({ children }) => {
   const setGridView = useCallback(() => {
     dispatch({ type: SET_GRIDVIEW });
   }, [dispatch]);
-  
+
   const setListView = useCallback(() => {
     dispatch({ type: SET_LISTVIEW });
   }, [dispatch]);

@@ -87,6 +87,6 @@ const Categories = () => {
       </StyledMenu>
     </div>
   );
-}
+};
 
-export default Categories
+export default Categories;

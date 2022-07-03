@@ -1,5 +1,5 @@
 import React from 'react';
-import Default from 'assets/png/default.png';
+import Default from 'assets/images/banner.jpg';
 import Image from 'next/image';
 import { Grid, Rating, Stack, Typography } from '@mui/material';
 import StarIcon from 'components/icons/star.icon';
@@ -22,7 +22,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ horizontal }) => (
   <Link href={`${Paths.PRODUCT_DETAIL}asdf`} passHref>
-    { /* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
     <a>
       <ProductCardWrapper horizontal={horizontal}>
         {horizontal ? (

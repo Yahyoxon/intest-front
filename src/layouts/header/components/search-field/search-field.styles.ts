@@ -9,7 +9,7 @@ export const SearchFieldWrapper = styled.div`
 `;
 
 export const CustomInput = styled(Input)`
-  border-radius: 0px 14px 14px 0px !important;
+  border-radius: 0 14px 14px 0 !important;
   background-color: ${COLORS.inputBackground} !important;
   width: 30rem;
   @media screen and (max-width: 1150px) {

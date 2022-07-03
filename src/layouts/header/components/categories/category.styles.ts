@@ -3,7 +3,7 @@ import { COLORS } from 'config/styles-config';
 import styled from 'styled-components';
 
 export const OpenerButton = styled(Button)`
-  border-radius: 14px 0px 0px 14px !important;
+  border-radius: 14px 0 0 14px !important;
   background-color: transparent;
   color: ${COLORS.primary};
   border: 1px solid ${COLORS.border};

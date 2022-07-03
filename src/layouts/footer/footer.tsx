@@ -1,16 +1,5 @@
 import React from 'react';
-import {
-  FooterWrapper,
-} from './footer.styles';
 
-const Footer = () => {
-  return (
-    <footer>
-      <FooterWrapper>
-       
-      </FooterWrapper>
-    </footer>
-  );
-};
+const Footer = () => <footer>dsds</footer>;
 
 export default Footer;

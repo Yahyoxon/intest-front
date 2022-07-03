@@ -1,5 +1,5 @@
 export enum Paths {
   HOME = '/',
   FILTER = '/filter',
-  PRODUCT_DETAIL = '/product/'
+  PRODUCT_DETAIL = '/product/',
 }

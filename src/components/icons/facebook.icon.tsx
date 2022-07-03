@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { IconType } from 'types/utility.types';
 
-const FaceBookIcon:IconType = (props) => (
+const FaceBookIcon: IconType = (props) => (
   <svg
     width="24"
     height="24"
@@ -19,5 +19,4 @@ const FaceBookIcon:IconType = (props) => (
   </svg>
 );
 
-
-export default FaceBookIcon
+export default FaceBookIcon;
