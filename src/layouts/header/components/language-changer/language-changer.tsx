@@ -21,7 +21,7 @@ const LanguageChanger = () => {
     setSelectedIndex(index)
   }
   return (
-    <Stack justifyContent="space-between" direction="row" sx={{ backgroundColor: "rgba(35, 52, 98, 0.1)", borderRadius: "88px", padding: "8px" }}>
+    <Stack justifyContent="space-between" direction="row" sx={{ backgroundColor: "rgba(35, 52, 98, 0.1)", borderRadius: "88px", padding: "8px", height: "35px" }}>
       {languages.map((lang, i) =>
         <Button key={lang} sx={{
           color: selectedIndex === i ? "#fff" : "#E2A412",
@@ -29,8 +29,9 @@ const LanguageChanger = () => {
           fontWeight: 700,
           background: selectedIndex === i ? "#E2A412" : "transparent",
           borderRadius: "88px",
+          padding: 0,
           ":hover": {
-            backgroundColor: "transparent!important"
+            backgroundColor: selectedIndex === i ? "#E2A412!important" : "transparent"
           }
         }} onClick={() => handleSelectLang(i)} >{lang}
         </Button>

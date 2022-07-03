@@ -67,7 +67,7 @@ const Header = () => {
             </Menu>
           </Box>
 
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems:"center" }}>
             {pages.map((page) => (
               <Button
                 key={page}
