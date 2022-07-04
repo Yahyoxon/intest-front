@@ -115,6 +115,7 @@ const AsyncSearch = () => {
         <TextField
           {...params}
           label="Asynchronous"
+          sx={{ backgroundColor: '#fff', borderRadius: '15px' }}
           InputProps={{
             ...params.InputProps,
             endAdornment: (
