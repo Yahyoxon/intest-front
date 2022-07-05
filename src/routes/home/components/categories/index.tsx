@@ -7,6 +7,9 @@ import catSvg from 'assets/images/svg/cat.svg';
 import Image from 'next/image';
 import ArrowIcon from 'components/icons/arrow.icon';
 import Link from 'next/link';
+import { useQuery } from 'react-query';
+import { getAllData } from 'services/get/all';
+import { get } from 'lodash';
 
 SwiperCore.use([Navigation, Scrollbar]);
 const items = [
@@ -19,8 +22,11 @@ const items = [
   'wwewew',
   'wwewew',
 ];
-const Categories = () => (
-  <>
+const Categories = () => {
+  const { data, isLoading, isFetching, isSuccess } = useQuery('categories', () =>
+    getAllData('/categories?_l=ru')
+  );
+  return (<>
     <Container maxWidth="xl" sx={{ paddingTop: '52px' }}>
       <Typography
         variant="h1"
@@ -74,18 +80,21 @@ const Categories = () => (
                 <Typography variant="body1" color="#5A7184">
                   128 товаров
                 </Typography>
-                {/* <Link href={`/${item}`}>
+                <Link href={`/${item}`} passHref>
+                  {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                   <a>
                     <ArrowIcon />
                   </a>
-                </Link> */}
+                </Link>
               </Stack>
             </Stack>
           </SwiperSlide>
         ))}
       </Swiper>
     </Box>
-  </>
-);
+  </>);
+};
 
 export default Categories;
+
+

@@ -14,7 +14,7 @@ export const ProductCardWrapper = styled.div<{ horizontal?: boolean }>`
 
 export const ProductCardImage = styled.div`
   border-radius: 14px;
-  height: 336px;
+  height: 230px;
   overflow: hidden;
   position: relative;
   width: 100%;

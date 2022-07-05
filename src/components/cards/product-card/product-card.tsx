@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { Grid, Stack, Typography } from '@mui/material';
 import Link from 'next/link';
 import { Paths } from 'config/site-paths';
-import { ProductCardImage, ProductCardWrapper } from './product-card.styles';
+import { ProductCardImage } from './product-card.styles';
 
 const ProductCard = () => (
-  <Grid xs={3} margin="0 -8px">
+  <Grid item xs={3} >
     <Link href={`${Paths.PRODUCT_DETAIL}asdf`} passHref>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <a>
@@ -16,6 +16,7 @@ const ProductCard = () => (
             layout="fill"
             src={Default}
             alt="product_image"
+            height="200px"
             placeholder="blur"
           />
         </ProductCardImage>
