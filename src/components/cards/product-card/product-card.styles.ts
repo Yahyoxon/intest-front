@@ -12,11 +12,12 @@ export const ProductCardWrapper = styled.div<{ horizontal?: boolean }>`
     horizontal ? `1px solid ${COLORS.borderColor}` : 'none'};
 `;
 
-export const ProductCardImage = styled.div<{ horizontal?: boolean }>`
+export const ProductCardImage = styled.div`
   border-radius: 14px;
-  height: ${({ horizontal }) => (horizontal ? '307px' : '336px')};
+  height: 336px;
   overflow: hidden;
   position: relative;
+  width: 100%;
   img {
     width: 100%;
     height: 100%;

@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: '#fff', padding: '22px 0' }}
+      sx={{ backgroundColor: '#fff', padding: '10px 0' }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>

@@ -1,18 +1,21 @@
 import styled from 'styled-components';
 
 export const BannerWrapper = styled.div`
+  position: relative;
   width: 100%;
   height: 500px;
-  position: relative;
   display: flex;
   justify-content: center;
   margin-top: 48px;
 `;
-export const SearchWrapper = styled.div`
-  width: 100%;
+export const TextWrapper = styled.div`
+  width: 50%;
   position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 99;
+  top: 80px;
+  left: 100px;
+  z-index: 999;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;

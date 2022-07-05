@@ -15,6 +15,7 @@ const Title = () => (
       fontWeight={600}
       lineHeight="68px"
       color="#183B56"
+      textAlign="center"
     >
       Каждая Покупка Будет Сделано с удовольствием
     </Typography>
