@@ -4,6 +4,8 @@ import Banner from './components/banner';
 import Title from './components/title';
 import Categories from './components/categories';
 import Products from './components/products';
+import Partners from './components/partners';
+import BePartner from './components/bePartner';
 
 const HomeRoute = () => (
   <>
@@ -13,8 +15,10 @@ const HomeRoute = () => (
     </Container>
     <Categories />
     <Container maxWidth="xl">
-      <Products />
+      <Products title="Популярная товары"/>
+      <Partners/>
     </Container>
+    <BePartner/>
   </>
 );
 

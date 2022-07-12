@@ -3,82 +3,40 @@ import InstagramIcon from 'components/icons/instagram.icon';
 import TelegramIcon from 'components/icons/telegram.icon';
 import TiktokIcon from 'components/icons/tik-tok.icon';
 import YouTubeIcon from 'components/icons/yout-tube.icon';
-import PlayStore from 'assets/images/banner.jpg';
 
-const AppStore = PlayStore;
 interface FooterLinks {
   title: string;
-  links: {
-    label?: string;
-    href: string;
-    img?: StaticImageData | string;
-  }[];
-}
+  links: string
+  };
 
-const footerLinks: FooterLinks[] = [
-  {
-    title: 'Платформа хақида',
-    links: [
-      {
-        label: 'Liber ўзи нима?',
-        href: '#',
-      },
-      {
-        label: 'Фойдаланиш шартлари',
-        href: '#',
-      },
-      {
-        label: 'Ёрдам',
-        href: '#',
-      },
-    ],
-  },
-  {
-    title: 'Обуна хақида',
-    links: [
-      {
-        label: 'Обуна бўлиш',
-        href: '#',
-      },
-      {
-        label: 'Қандай тўлаш',
-        href: '#',
-      },
-    ],
-  },
-  {
-    title: 'Китоблар',
-    links: [
-      {
-        label: 'Аудио китоблар',
-        href: '#',
-      },
-      {
-        label: 'Электрон китоблар',
-        href: '#',
-      },
-      {
-        label: 'Китоблар',
-        href: '#',
-      },
-    ],
-  },
-  {
-    title: 'Мобил илова',
-    links: [
-      {
-        img: PlayStore,
-        href: '#',
-      },
-      {
-        img: AppStore,
-        href: '#',
-      },
-    ],
-  },
-];
 
-export const socialLins = [
+  export const footerLinks: FooterLinks[] = [
+  {
+    title: 'Товары',
+    links:"#" 
+  },
+  {
+    title: 'Категории',
+    links:"#"
+  },
+  {
+    title: 'О компании',
+    links:"#"
+  },
+  {
+    title: 'Контакты',
+    links:"#"
+  },
+  {
+    title: 'Помощь',
+    links:"#"
+  },
+  {
+    title: 'Политика конфиденциальности',
+    links:"#"
+  },
+]
+export const socialLinks = [
   {
     link: '#',
     Icon: FaceBookIcon,
@@ -101,4 +59,3 @@ export const socialLins = [
   },
 ];
 
-export default footerLinks;

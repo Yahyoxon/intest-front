@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import { COLORS } from 'config/styles-config';
 import styled from 'styled-components';
 
@@ -31,4 +32,47 @@ export const ProductCardInfo = styled.div`
   height: 100%;
   justify-content: space-around;
   align-content: space-between;
+`;
+export const CardWrapper = styled.div<{ before?: string }>`
+  box-shadow: 0 13px 46px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
+  position: relative;
+  height: 330px;
+  &:before {
+    content: '${(props) => props.before}';
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #ffffff;
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    z-index: 23232;
+    background-color: red;
+  }
+`;
+
+export const PriceWrapper = styled.div`
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.2px;
+  color: #183b56;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 0px;
+    width: 50%;
+    height: 1px;
+    transform: rotate(-3deg);
+    background-color: red;
+  }
 `;

@@ -48,7 +48,7 @@ const Banner = () => {
               >
                 {get(item, 'content')}
               </Typography>
-              <Link href={get(item, 'link', '/')}>
+              <Link href={get(item, 'link', '/')} passHref>
                 <Button
                   variant="contained"
                   size="large"

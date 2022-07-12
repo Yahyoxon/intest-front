@@ -7,6 +7,8 @@ export const BannerWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 48px;
+  border-radius: 8px;
+  overflow:hidden;
 `;
 export const TextWrapper = styled.div`
   width: 50%;

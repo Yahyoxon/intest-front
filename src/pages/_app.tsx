@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 import { ThemeProvider } from 'styled-components';
 import { QueryClientProvider, QueryClient, Hydrate } from 'react-query';
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps }: AppProps | any) => {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
