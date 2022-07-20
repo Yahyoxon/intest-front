@@ -1,4 +1,3 @@
-import { Typography } from '@mui/material';
 import { COLORS } from 'config/styles-config';
 import styled from 'styled-components';
 
@@ -40,7 +39,7 @@ export const CardWrapper = styled.div<{ before?: string }>`
   background-color: #fff;
   position: relative;
   height: 330px;
-  &:before {
+  &::before {
     content: '${(props) => props.before}';
     padding: 5px;
     margin: 5px;
@@ -48,7 +47,7 @@ export const CardWrapper = styled.div<{ before?: string }>`
     font-size: 13px;
     text-transform: uppercase;
     font-weight: 800;
-    color: #ffffff;
+    color: #fff;
     position: absolute;
     top: 14px;
     left: 10px;
@@ -65,11 +64,11 @@ export const PriceWrapper = styled.div`
   color: #183b56;
   position: relative;
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     top: 14px;
-    left: 0px;
+    left: 0;
     width: 50%;
     height: 1px;
     transform: rotate(-3deg);

@@ -20,7 +20,7 @@ export const InputStyled = styled.input`
     outline: none;
   }
 
-  &:after {
+  &::after {
     content: '✉️';
     position: absolute;
     top: 50%;
@@ -45,7 +45,7 @@ export const InputChildWrapperImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:12px;
+  padding: 12px;
 `;
 
 export const InputChildWrapper = styled.div`

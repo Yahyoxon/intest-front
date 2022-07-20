@@ -9,18 +9,14 @@ import Head from 'next/head';
 
 const HomeRoute: any = dynamic(() => import('routes/home'));
 
-const Home: NextPage = () => {
-  // const data = get(props, 'dehydratedState.queries[0].state.data');
-  console.log("first")
-  return (
-    <Main>
-      <Head>
-        <title>dwqdqwdwq</title>
-      </Head>
-      <HomeRoute />
-    </Main>
-  );
-};
+const Home: NextPage = () => (
+  <Main>
+    <Head>
+      <title>dwqdqwdwq</title>
+    </Head>
+    <HomeRoute />
+  </Main>
+);
 export default Home;
 
 // export const getStaticProps: GetStaticProps = async (context) => {

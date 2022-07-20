@@ -8,7 +8,7 @@ export const BannerWrapper = styled.div`
   justify-content: center;
   margin-top: 48px;
   border-radius: 8px;
-  overflow:hidden;
+  overflow: hidden;
 `;
 export const TextWrapper = styled.div`
   width: 50%;

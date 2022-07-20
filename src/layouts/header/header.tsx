@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import LogoIcon from 'components/icons/logo.icon';
 import MenuIcon from 'components/icons/menu.icon';
+import Link from 'next/link';
 import React from 'react';
 import { LanguageChanger } from './components/language-changer';
 
@@ -36,7 +37,11 @@ const Header = () => {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
-          <LogoIcon />
+          <Link href="/">
+            <Box sx={{ zIndex: 9999 }}>
+              <LogoIcon />
+            </Box>
+          </Link>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"

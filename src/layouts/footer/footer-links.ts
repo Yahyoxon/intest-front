@@ -6,36 +6,35 @@ import YouTubeIcon from 'components/icons/yout-tube.icon';
 
 interface FooterLinks {
   title: string;
-  links: string
-  };
+  links: string;
+}
 
-
-  export const footerLinks: FooterLinks[] = [
+export const footerLinks: FooterLinks[] = [
   {
     title: 'Товары',
-    links:"#" 
+    links: '#',
   },
   {
     title: 'Категории',
-    links:"#"
+    links: '#',
   },
   {
     title: 'О компании',
-    links:"#"
+    links: '#',
   },
   {
     title: 'Контакты',
-    links:"#"
+    links: '#',
   },
   {
     title: 'Помощь',
-    links:"#"
+    links: '#',
   },
   {
     title: 'Политика конфиденциальности',
-    links:"#"
+    links: '#',
   },
-]
+];
 export const socialLinks = [
   {
     link: '#',
@@ -58,4 +57,3 @@ export const socialLinks = [
     Icon: InstagramIcon,
   },
 ];
-

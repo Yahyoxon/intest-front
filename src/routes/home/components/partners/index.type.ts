@@ -6,14 +6,13 @@ export const PartnersWrapper = styled.div`
 
 export const ImageWrapper = styled.div`
   max-width: 20%;
-  width:100%;
-  max-height:50px;
+  width: 100%;
+  max-height: 50px;
   text-align: center;
-  transition:all 0.2s;
+  transition: all 0.2s;
 
-
-  &:hover{
-      transform:scale(1.2);
-      transition:all 0.2s;
+  &:hover {
+    transform: scale(1.2);
+    transition: all 0.2s;
   }
 `;

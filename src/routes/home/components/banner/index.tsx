@@ -20,48 +20,57 @@ const Banner = () => {
   );
   return (
     <Swiper loop={false} effect="fade" spaceBetween={10} slidesPerView={1}>
-      {isSuccess && get(data, "data").map((item: object) => (
-        <SwiperSlide key={get(item, "title").toString()}>
-          <BannerWrapper>
-            <Image
-              src={get(item, 'file.thumbnails.normal.src', BannerImage)}
-              alt="banner"
-              layout="fill"
-              height={500}
-              objectFit="cover"
-            />
-            <TextWrapper>
-              <Typography
-                variant="h2"
-                fontSize="50px"
-                fontWeight={700}
-                color="#fff"
-                lineHeight="60px"
-              >
-                {get(item, 'title')}
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                fontSize="28px"
-                fontWeight={400}
-                color="#fff"
-              >
-                {get(item, 'content')}
-              </Typography>
-              <Link href={get(item, 'link', '/')} passHref>
-                <Button
-                  variant="contained"
-                  size="large"
-                  sx={{ width: 'inherit', padding: '20px 30px' }}
+      {isSuccess &&
+        get(data, 'data').map((item: object) => (
+          <SwiperSlide key={get(item, 'title').toString()}>
+            <BannerWrapper>
+              <Image
+                src={get(item, 'file.thumbnails.normal.src', BannerImage)}
+                alt="banner"
+                layout="fill"
+                height={500}
+                objectFit="cover"
+              />
+              <TextWrapper>
+                <Typography
+                  variant="h2"
+                  fontSize="50px"
+                  fontWeight={700}
+                  color="#fff"
+                  lineHeight="60px"
+                  sx={(theme) => ({
+                    [theme.breakpoints.down('md')]: {
+                      fontSize: '30px',
+                      lineHeight: '38px',
+                    },
+                  })}
                 >
-                  {get(item, 'button_text')}
-                </Button>
-              </Link>
-            </TextWrapper>
-          </BannerWrapper>
-        </SwiperSlide>
-      ))}
-
+                  {get(item, 'title')}
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  fontSize="28px"
+                  fontWeight={400}
+                  color="#fff"
+                  sx={(theme) => ({
+                    [theme.breakpoints.down('md')]: { fontSize: '22px' },
+                  })}
+                >
+                  {get(item, 'content')}
+                </Typography>
+                <Link href={get(item, 'link', '/')} passHref>
+                  <Button
+                    variant="contained"
+                    size="large"
+                    sx={{ width: 'inherit', padding: '20px 30px' }}
+                  >
+                    {get(item, 'button_text')}
+                  </Button>
+                </Link>
+              </TextWrapper>
+            </BannerWrapper>
+          </SwiperSlide>
+        ))}
     </Swiper>
   );
 };

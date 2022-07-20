@@ -6,7 +6,6 @@ type SeoProps = {
   description?: string;
   canonical?: string;
   css?: string;
-  js?: string;
   image?: string;
 };
 
@@ -15,7 +14,6 @@ export const SEO: React.FC<SeoProps> = ({
   description,
   canonical,
   css,
-  js,
   image,
 }) => (
   <Head>

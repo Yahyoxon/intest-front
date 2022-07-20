@@ -6,19 +6,21 @@ import Categories from './components/categories';
 import Products from './components/products';
 import Partners from './components/partners';
 import BePartner from './components/bePartner';
+import Search from './components/search';
 
 const HomeRoute = () => (
   <>
     <Container maxWidth="xl">
       <Title />
+      <Search />
       <Banner />
     </Container>
     <Categories />
     <Container maxWidth="xl">
-      <Products title="Популярная товары"/>
-      <Partners/>
+      <Products title="Популярная товары" />
+      <Partners />
     </Container>
-    <BePartner/>
+    <BePartner />
   </>
 );
 
