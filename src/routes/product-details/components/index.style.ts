@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 
 export const ImageWrapper = styled.div`
-  width: 500px;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
+  img {
+    width: 100%;
+  }
 `;
 export const GalleryWrapper = styled.div<{ itemSelected?: boolean }>`
   border: ${(props) =>

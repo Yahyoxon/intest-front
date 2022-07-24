@@ -12,48 +12,36 @@ interface FooterLinks {
 export const footerLinks: FooterLinks[] = [
   {
     title: 'Товары',
-    links: '#',
-  },
-  {
-    title: 'Категории',
-    links: '#',
+    links: 'filter',
   },
   {
     title: 'О компании',
-    links: '#',
+    links: 'about-us',
   },
   {
     title: 'Контакты',
-    links: '#',
-  },
-  {
-    title: 'Помощь',
-    links: '#',
-  },
-  {
-    title: 'Политика конфиденциальности',
-    links: '#',
+    links: 'contacts',
   },
 ];
 export const socialLinks = [
   {
-    link: '#',
+    link: '#w',
     Icon: FaceBookIcon,
   },
   {
-    link: '#',
+    link: '#e',
     Icon: YouTubeIcon,
   },
   {
-    link: '#',
+    link: '#3',
     Icon: TiktokIcon,
   },
   {
-    link: '#',
+    link: '#r',
     Icon: TelegramIcon,
   },
   {
-    link: '#',
+    link: '#t',
     Icon: InstagramIcon,
   },
 ];

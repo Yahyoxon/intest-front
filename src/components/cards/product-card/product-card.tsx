@@ -27,7 +27,7 @@ const ProductCard = ({
             layout="fill"
             src={get(product, 'file.thumbnails.normal.src', Default)}
             alt="product_image"
-            height="200px"
+            // height="200px"
           />
         </ProductCardImage>
         <Stack

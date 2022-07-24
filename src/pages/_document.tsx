@@ -38,20 +38,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link
-            as="font"
-            crossOrigin="anonymous"
-            href="/font/Roboto-Light.ttf"
-            rel="stylesheet"
-            type="font/ttf"
-          />
-          <link
-            as="font"
-            crossOrigin="anonymous"
-            href="/font/font/Roboto-Medium.ttf"
-            rel="stylesheet"
-            type="font/ttf"
-          />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
         </Head>
         <body>
           <Main />

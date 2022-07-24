@@ -10,10 +10,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 const RelatedProducts: React.FC<Iproduct> = ({ product }) => {
   const { data, isLoading, isFetching, isSuccess } = useQuery('products', () =>
-    getAllData(
-      `/products/related/${get(product, 'id')}?include=categories,file&_l=ru`
-    )
+    getAllData(`/products/related/${get(product, 'id')}?include=file&_l=ru`)
   );
+  console.log(get(data, 'data', []));
+
   return (
     <Box sx={{ margin: '50px 0 80px' }}>
       <Typography
@@ -27,7 +27,13 @@ const RelatedProducts: React.FC<Iproduct> = ({ product }) => {
         Похожие товары
       </Typography>
       <br />
-      <Swiper loop={false} effect="fade" spaceBetween={50} slidesPerView={4.5}>
+      <Swiper
+        loop={false}
+        effect="fade"
+        spaceBetween={30}
+        style={{ padding: '10px', borderRadius: '5px' }}
+        slidesPerView={4.5}
+      >
         {get(data, 'data', []).map((item: any) => (
           <SwiperSlide key={get(item, 'id')}>
             <ProductCard product={item} />

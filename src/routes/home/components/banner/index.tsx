@@ -28,7 +28,7 @@ const Banner = () => {
                 src={get(item, 'file.thumbnails.normal.src', BannerImage)}
                 alt="banner"
                 layout="fill"
-                height={500}
+                // height={500}
                 objectFit="cover"
               />
               <TextWrapper>

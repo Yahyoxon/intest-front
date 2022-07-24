@@ -63,7 +63,7 @@ export const CardWrapper = styled.div<{ before?: string }>`
     position: absolute;
     top: 14px;
     left: 10px;
-    z-index: 23232;
+    z-index: 99;
     background-color: red;
   }
 `;

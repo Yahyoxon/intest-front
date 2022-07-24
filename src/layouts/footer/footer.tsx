@@ -45,7 +45,7 @@ const Footer = () => (
         </Typography>
         <Stack direction="row">
           {socialLinks.map((social) => (
-            <SocialWrapper href={social.link} key={social.toString()}>
+            <SocialWrapper href={social.link} key={social.link.toString()}>
               <social.Icon />
             </SocialWrapper>
           ))}
