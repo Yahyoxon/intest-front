@@ -43,7 +43,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params?.slug as string;
   const queryClient = new QueryClient();
-  console.log(slug);
   await queryClient.prefetchQuery('products', () => getSingleProduct(slug));
 
   return {
