@@ -76,7 +76,7 @@ const FilterRoute = () => {
             justifyContent="space-between"
             marginTop="20px"
           >
-            <Box sx={{ width: '80%' }}>
+            <Box sx={{ width: '70%' }}>
               <Button
                 variant="outlined"
                 fullWidth

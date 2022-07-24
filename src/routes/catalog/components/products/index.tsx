@@ -32,6 +32,7 @@ const Products = ({
             <Grid
               key={product.name}
               item
+              sm={isGrid ? 6 : 12}
               xs={isGrid ? 6 : 12}
               md={isGrid ? 4 : 12}
               lg={isGrid ? 3 : 12}
@@ -47,6 +48,7 @@ const Products = ({
               <Grid
                 key={(k + index).toString()}
                 item
+                sm={isGrid ? 6 : 12}
                 xs={isGrid ? 6 : 12}
                 md={isGrid ? 4 : 12}
                 lg={isGrid ? 3 : 12}
@@ -58,6 +60,7 @@ const Products = ({
         {!isFetching && get(data, 'data.length') === 0 && (
           <Grid
             item
+            sm={isGrid ? 6 : 12}
             xs={isGrid ? 6 : 12}
             md={isGrid ? 4 : 12}
             lg={isGrid ? 3 : 12}

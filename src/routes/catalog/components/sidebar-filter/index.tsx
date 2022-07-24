@@ -64,9 +64,9 @@ const SidebarFilter = ({
           fullScreen
           open={openFilter}
           onClose={handleFilterOpen}
-          sx={{ zIndex: 999999999999999 }}
+          sx={{ zIndex: 999999 }}
         >
-          <AppBar sx={{ position: 'relative' }}>
+          <AppBar sx={{ position: 'relative', background: 'blue' }}>
             <Toolbar>
               <IconButton
                 edge="start"
@@ -74,7 +74,7 @@ const SidebarFilter = ({
                 onClick={handleFilterOpen}
                 aria-label="close"
               >
-                <CancelIcon />{' '}
+                <CancelIcon />
               </IconButton>
               <Typography
                 color="#fff"
