@@ -31,7 +31,14 @@ const Products = ({ title }: { title?: string }) => {
             rowSpacing={5}
           >
             {get(data, 'data', []).map((product: IProduct) => (
-              <Grid key={product.name} item xs={3}>
+              <Grid
+                key={product.name}
+                item
+                sm={12}
+                md={4}
+                lg={3}
+                sx={{ width: '100%' }}
+              >
                 <ProductCard {...{ product }} />
               </Grid>
             ))}

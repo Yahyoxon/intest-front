@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "format": "prettier --write \"src/**/*.{ts,tsx}\" ",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet",
     "lint-css": "stylelint \"src/**/*.{js,jsx,ts,tsx}\" --config",

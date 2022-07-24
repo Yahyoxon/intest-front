@@ -36,9 +36,11 @@ const MainView: React.FC<Iproduct> = ({ product }) => {
         <ImageWrapper>
           <Image
             src={get(selected, 'thumbnails.normal.src', selected)}
-            width="500px"
-            height="580px"
-            layout="fixed"
+            width={500}
+            height={580}
+            // objectFit='cover'
+            layout="responsive"
+            quality={65}
             alt={get(product, 'name')}
           />
         </ImageWrapper>

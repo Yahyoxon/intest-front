@@ -24,6 +24,18 @@ export const ProductCardImage = styled.div`
     object-fit: cover;
   }
 `;
+export const ProductCardImageList = styled.div`
+  border-radius: 14px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  width: 220px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
 
 export const ProductCardInfo = styled.div`
   display: flex;
@@ -39,6 +51,29 @@ export const CardWrapper = styled.div<{ before?: string }>`
   background-color: #fff;
   position: relative;
   height: 330px;
+  &::before {
+    content: '${(props) => props.before}';
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fff;
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    z-index: 23232;
+    background-color: red;
+  }
+`;
+export const CardWrapperList = styled.div<{ before?: string }>`
+  box-shadow: 0 13px 46px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
+  position: relative;
+  height: 200px;
   &::before {
     content: '${(props) => props.before}';
     padding: 5px;

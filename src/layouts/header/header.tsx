@@ -11,11 +11,16 @@ import {
 } from '@mui/material';
 import LogoIcon from 'components/icons/logo.icon';
 import MenuIcon from 'components/icons/menu.icon';
+import { Paths } from 'config/site-paths';
 import Link from 'next/link';
 import React from 'react';
 import { LanguageChanger } from './components/language-changer';
 
-const pages = ['Товары', 'О компании', 'Контакты'];
+const pages = [
+  { label: 'Товары', url: Paths.FILTER },
+  { label: 'О компании', url: Paths.FILTER },
+  { label: 'Контакты', url: Paths.FILTER },
+];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -72,8 +77,8 @@ const Header = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page.label}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -84,7 +89,7 @@ const Header = () => {
           >
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.label}
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
@@ -97,7 +102,7 @@ const Header = () => {
                   display: 'block',
                 }}
               >
-                {page}
+                <Link href={page.url}>{page.label}</Link>
               </Button>
             ))}
             <LanguageChanger />

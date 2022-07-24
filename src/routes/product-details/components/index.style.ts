@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const ImageWrapper = styled.div`
-  max-width: 500px;
-  height: 580px;
+  width: 500px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
 `;

@@ -25,6 +25,7 @@
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks"],
   "rules": {
+    "@next/next/no-html-link-for-pages": ["error", "packages/in-test/pages"],
     "import/no-unresolved": [2, { "caseSensitive": false }],
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],

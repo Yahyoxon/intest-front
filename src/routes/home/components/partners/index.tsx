@@ -51,9 +51,9 @@ const Partners = () => {
             <ImageWrapper key={item.id.toString()}>
               <Image
                 src={get(item, 'file.thumbnails.normal.src')}
-                height={35}
-                width="100%"
-                alt={get(item, 'file.thumbnails.normal.src')}
+                height={80}
+                width={120}
+                alt={get(item, 'name')}
               />
             </ImageWrapper>
           ))}
