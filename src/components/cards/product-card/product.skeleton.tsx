@@ -1,7 +1,7 @@
 import { Skeleton, Stack } from '@mui/material';
 import React from 'react';
 
-const ProductSkeleton = ({ isGrid }: { isGrid?: boolean }) => (
+const ProductSkeleton = ({ isGrid }: { isGrid: boolean }) => (
   <Stack direction={isGrid ? 'column' : 'row'}>
     <Skeleton
       variant="rectangular"

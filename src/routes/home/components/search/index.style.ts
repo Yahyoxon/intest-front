@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const SearchForm = styled.div`
-  width: 70%;
+export const SearchForm = styled.div<{ isMobile?: boolean }>`
+  width: ${(props) => (props.isMobile ? '100%' : '70%')};
   position: relative;
   margin: 0 auto;
 `;

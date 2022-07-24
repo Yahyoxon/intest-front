@@ -1,5 +1,6 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { ProductCard } from 'components/cards/product-card';
+import ProductSkeleton from 'components/cards/product-card/product.skeleton';
 import { IProduct } from 'components/cards/product-card/product.types';
 import { get } from 'lodash';
 import React from 'react';
@@ -11,6 +12,8 @@ const Products = ({ title }: { title?: string }) => {
   const { data, isLoading, isFetching, isSuccess } = useQuery('products', () =>
     getAllData('/products?include=file&_l=ru')
   );
+  const theme = useTheme();
+  const isMobile = !useMediaQuery(theme.breakpoints.up('md'));
   return (
     <>
       <Typography
@@ -27,21 +30,54 @@ const Products = ({ title }: { title?: string }) => {
           <Grid
             container
             justifyContent="flex-start"
-            spacing={3}
-            rowSpacing={5}
+            spacing={isMobile ? 2 : 3}
+            rowSpacing={isMobile ? 2 : 5}
           >
-            {get(data, 'data', []).map((product: IProduct) => (
+            {!isFetching &&
+              isSuccess &&
+              get(data, 'data', []).map((product: IProduct) => (
+                <Grid
+                  key={product.name}
+                  item
+                  sm={6}
+                  xs={6}
+                  md={4}
+                  lg={3}
+                  sx={{ width: isMobile ? '50%' : '100%' }}
+                >
+                  <ProductCard {...{ product }} />
+                </Grid>
+              ))}
+            {isFetching &&
+              Array(10)
+                .fill('d')
+                .map((k, index: number) => (
+                  <Grid
+                    key={(k + index).toString()}
+                    item
+                    sm={6}
+                    xs={6}
+                    md={4}
+                    lg={3}
+                    sx={{ width: isMobile ? '50%' : '100%' }}
+                  >
+                    <ProductSkeleton isGrid />
+                  </Grid>
+                ))}
+            {!isFetching && get(data, 'data.length') === 0 && (
               <Grid
-                key={product.name}
                 item
-                sm={12}
+                sm={6}
+                xs={6}
                 md={4}
                 lg={3}
-                sx={{ width: '100%' }}
+                sx={{ width: isMobile ? '50%' : '100%' }}
               >
-                <ProductCard {...{ product }} />
+                <Typography variant="h6" textAlign="center">
+                  Ничего не найдено :(
+                </Typography>
               </Grid>
-            ))}
+            )}
           </Grid>
         </Grid>
       </Grid>

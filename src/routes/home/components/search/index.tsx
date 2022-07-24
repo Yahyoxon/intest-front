@@ -1,4 +1,12 @@
-import { Button, Divider, Hidden, Stack, Typography } from '@mui/material';
+import {
+  Button,
+  Divider,
+  Hidden,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import SearchIcon from 'components/icons/search.icon';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
@@ -18,7 +26,8 @@ import {
 
 const Search = () => {
   const [data, setData] = useState([]);
-
+  const theme = useTheme();
+  const isMobile = !useMediaQuery(theme.breakpoints.up('md'));
   const { control, handleSubmit, watch } = useForm({
     defaultValues: {
       search: '',
@@ -39,18 +48,8 @@ const Search = () => {
       }
     })();
   }, [values]);
-
-  // const onSubmit = async (value: any) => {
-  //     if (value.search.length > 0) {
-  //         const response: any = await axios.get<[]>(
-  //             `${process.env.NEXT_PUBLIC_API_URL}/products?search=${value.search}&include=file&_l=ru`
-  //         );
-  //         setData(response);
-  //     }
-  // };
-
   return (
-    <SearchForm>
+    <SearchForm {...{ isMobile }}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <SearchWrapper>
           <Controller
@@ -63,21 +62,23 @@ const Search = () => {
           <IconWrapper>
             <SearchIcon />
           </IconWrapper>
-          <Button
-            variant="contained"
-            type="submit"
-            sx={{
-              fontWeight: 700,
-              fontSize: '18px',
-              height: '85%',
-              background: '#E2A412',
-              padding: '20px 80px',
-              marginRight: '8px',
-              borderRadius: '4px',
-            }}
-          >
-            Найти
-          </Button>
+          {!isMobile && (
+            <Button
+              variant="contained"
+              type="submit"
+              sx={{
+                fontWeight: 700,
+                fontSize: '18px',
+                height: '85%',
+                background: '#E2A412',
+                padding: '20px 80px',
+                marginRight: '8px',
+                borderRadius: '4px',
+              }}
+            >
+              Найти
+            </Button>
+          )}
         </SearchWrapper>
       </form>
       {get(data, 'data.data.length') > 0 && (
@@ -115,12 +116,12 @@ const Search = () => {
                       color="#000"
                       lineHeight="25px"
                       textAlign="left"
-                      sx={(theme) => ({
+                      sx={{
                         [theme.breakpoints.down('md')]: {
                           padding: '0 10px',
                           fontSize: '32px',
                         },
-                      })}
+                      }}
                     >
                       {get(item, 'name', '')}
                     </Typography>
@@ -131,13 +132,13 @@ const Search = () => {
                       color="#000"
                       lineHeight="25px"
                       textAlign="left"
-                      sx={(theme) => ({
+                      sx={{
                         opacity: 0.5,
                         [theme.breakpoints.down('md')]: {
                           padding: '0 10px',
                           fontSize: '32px',
                         },
-                      })}
+                      }}
                     >
                       {get(item, 'name', '')}
                     </Typography>

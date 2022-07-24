@@ -8,9 +8,11 @@ import { FooterWrapper, LogoWrapper, SocialWrapper } from './footer.styles';
 const Footer = () => (
   <FooterWrapper>
     <Container maxWidth="xl">
-      <LogoWrapper>
-        <LogoLightIcon />
-      </LogoWrapper>
+      <Link href="/" passHref>
+        <LogoWrapper>
+          <LogoLightIcon />
+        </LogoWrapper>
+      </Link>
       <Stack
         direction="row"
         justifyContent="space-evenly"
@@ -21,7 +23,14 @@ const Footer = () => (
       >
         {footerLinks.map((link) => (
           <Link key={link.title} href={`/${link.links}`} passHref>
-            <Button variant="text" sx={{ color: '#fff', fontSize: '16px' }}>
+            <Button
+              variant="text"
+              sx={(theme) => ({
+                color: '#fff',
+                fontSize: '16px',
+                [theme.breakpoints.down('md')]: { marginTop: '15px' },
+              })}
+            >
               {link.title}
             </Button>
           </Link>
@@ -37,10 +46,19 @@ const Footer = () => (
         justifyContent="space-between"
         marginTop="25px"
         sx={(theme) => ({
-          [theme.breakpoints.down('md')]: { flexDirection: 'column' },
+          [theme.breakpoints.down('md')]: {
+            flexDirection: 'column-reverse',
+            alignItems: 'center',
+          },
         })}
       >
-        <Typography variant="body1" color="#D9DBE1">
+        <Typography
+          variant="body1"
+          color="#D9DBE1"
+          sx={(theme) => ({
+            [theme.breakpoints.down('md')]: { marginTop: '20px' },
+          })}
+        >
           © 2022 Intest. Все права защищены
         </Typography>
         <Stack direction="row">

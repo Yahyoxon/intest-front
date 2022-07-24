@@ -36,7 +36,7 @@ const Products = ({
               xs={isGrid ? 6 : 12}
               md={isGrid ? 4 : 12}
               lg={isGrid ? 3 : 12}
-              sx={{ width: '100%' }}
+              sx={{ width: isGrid ? '50%' : '100%' }}
             >
               <ProductCard {...{ product, isGrid }} />
             </Grid>
@@ -54,17 +54,11 @@ const Products = ({
                 lg={isGrid ? 3 : 12}
                 sx={{ width: '100%' }}
               >
-                <ProductSkeleton {...{ isGrid }} />
+                <ProductSkeleton isGrid />
               </Grid>
             ))}
         {!isFetching && get(data, 'data.length') === 0 && (
-          <Grid
-            item
-            sm={isGrid ? 6 : 12}
-            xs={isGrid ? 6 : 12}
-            md={isGrid ? 4 : 12}
-            lg={isGrid ? 3 : 12}
-          >
+          <Grid item>
             <Typography variant="h6" textAlign="center">
               Ничего не найдено :(
             </Typography>

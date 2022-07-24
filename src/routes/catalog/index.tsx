@@ -158,11 +158,13 @@ const FilterRoute = () => {
         )}
       </Stack>
       <Stack direction={isMobile ? 'column' : 'row'}>
-        <Box sx={{ width: '30%' }}>
-          <SidebarFilter
-            {...{ isMobile, handleFilterOpen, openFilter, setOpenFilter }}
-          />
-        </Box>
+        {!isMobile && (
+          <Box sx={{ width: '30%' }}>
+            <SidebarFilter
+              {...{ isMobile, handleFilterOpen, openFilter, setOpenFilter }}
+            />
+          </Box>
+        )}
         <Products {...{ data, isGrid, isFetching, isSuccess, isMobile }} />
       </Stack>
       {get(data, 'last_page') > 1 && (

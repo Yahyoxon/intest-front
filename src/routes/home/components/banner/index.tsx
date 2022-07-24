@@ -8,12 +8,14 @@ import BannerImage from 'assets/images/banner.jpg';
 import { useQuery } from 'react-query';
 import { getAllData } from 'services/get/all';
 import { get } from 'lodash';
-import { Button, Typography } from '@mui/material';
+import { Button, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { BannerWrapper, TextWrapper } from './banner.style';
 
 SwiperCore.use([Navigation, Scrollbar]);
 
 const Banner = () => {
+  const theme = useTheme();
+  const isMobile = !useMediaQuery(theme.breakpoints.up('md'));
   //  eslint-disable-next-line
   const { data, isLoading, isFetching, isSuccess } = useQuery('banners', () =>
     getAllData('/banners?_l=ru')
@@ -23,7 +25,7 @@ const Banner = () => {
       {isSuccess &&
         get(data, 'data').map((item: object) => (
           <SwiperSlide key={get(item, 'title').toString()}>
-            <BannerWrapper>
+            <BannerWrapper {...{ isMobile }}>
               <Image
                 src={get(item, 'file.thumbnails.normal.src', BannerImage)}
                 alt="banner"
@@ -31,19 +33,19 @@ const Banner = () => {
                 // height={500}
                 objectFit="cover"
               />
-              <TextWrapper>
+              <TextWrapper {...{ isMobile }}>
                 <Typography
                   variant="h2"
                   fontSize="50px"
                   fontWeight={700}
                   color="#fff"
                   lineHeight="60px"
-                  sx={(theme) => ({
+                  sx={{
                     [theme.breakpoints.down('md')]: {
                       fontSize: '30px',
                       lineHeight: '38px',
                     },
-                  })}
+                  }}
                 >
                   {get(item, 'title')}
                 </Typography>
@@ -52,21 +54,26 @@ const Banner = () => {
                   fontSize="28px"
                   fontWeight={400}
                   color="#fff"
-                  sx={(theme) => ({
+                  sx={{
                     [theme.breakpoints.down('md')]: { fontSize: '22px' },
-                  })}
+                  }}
                 >
                   {get(item, 'content')}
                 </Typography>
-                <Link href={get(item, 'link', '/')} passHref>
-                  <Button
-                    variant="contained"
-                    size="large"
-                    sx={{ width: 'inherit', padding: '20px 30px' }}
-                  >
-                    {get(item, 'button_text')}
-                  </Button>
-                </Link>
+                {get(item, 'link.length') > 0 && (
+                  <Link href={get(item, 'link', '/')} passHref>
+                    <Button
+                      variant="contained"
+                      size="large"
+                      sx={{
+                        width: isMobile ? 'inherit' : '30%',
+                        padding: '20px 30px',
+                      }}
+                    >
+                      {get(item, 'button_text')}
+                    </Button>
+                  </Link>
+                )}
               </TextWrapper>
             </BannerWrapper>
           </SwiperSlide>

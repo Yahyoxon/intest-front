@@ -4,8 +4,8 @@ export const PartnersWrapper = styled.div`
   margin: 140px auto;
 `;
 
-export const ImageWrapper = styled.div`
-  max-width: 20%;
+export const ImageWrapper = styled.div<{ isMobile: boolean }>`
+  max-width: ${(props) => (props.isMobile ? '50%' : '20%')};
   width: 100%;
   max-height: 50px;
   text-align: center;
