@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { get } from 'lodash';
 import { useQuery } from 'react-query';
 import { getAllData } from 'services/get/all';
+import defaultImage from 'assets/images/banner.jpg';
 import { ImageWrapper, PartnersWrapper } from './index.type';
 
 const Partners = () => {
@@ -13,6 +14,7 @@ const Partners = () => {
   const { data, isLoading, isFetching, isSuccess } = useQuery('partner', () =>
     getAllData('/partner?include=file&_l=ru')
   );
+
   return (
     <PartnersWrapper>
       <Typography
@@ -52,7 +54,7 @@ const Partners = () => {
           get(data, 'data').map((item: any) => (
             <ImageWrapper key={item.id.toString()} {...{ isMobile }}>
               <Image
-                src={get(item, 'file.thumbnails.normal.src')}
+                src={get(item, 'file.thumbnails.normal.src', defaultImage)}
                 height={80}
                 width={120}
                 alt={get(item, 'name')}

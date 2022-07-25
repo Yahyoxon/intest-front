@@ -78,62 +78,63 @@ const Categories = () => {
             },
           }}
         >
-          {get(data, 'data', []).map((item: any) => (
-            <SwiperSlide key={item.id}>
-              <Link href={`${Paths.FILTER}?${item.id}`} passHref>
-                <Stack
-                  direction="column"
-                  justifyContent="space-between"
-                  alignItems="flex-start"
-                  padding="40px 24px"
-                  margin="60px 0"
-                  sx={{
-                    backgorundColor: '#fff',
-                    borderRadius: '8px',
-                    height: '200px',
-                    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.04)',
-                    ':hover': {
-                      background: '#e3e3e3',
-                    },
-                  }}
-                >
-                  <Image
-                    src={get(item, 'file.thumbnails.normal.src')}
-                    alt={get(item, 'name_ru')}
-                    width={120}
-                    height={100}
-                    layout="intrinsic"
-                  />
+          {isSuccess &&
+            get(data, 'data', []).map((item: any) => (
+              <SwiperSlide key={item.id}>
+                <Link href={`${Paths.FILTER}?${item.id}`} passHref>
                   <Stack
-                    width="100%"
-                    direction="row"
+                    direction="column"
                     justifyContent="space-between"
-                    alignItems="flex-end"
+                    alignItems="flex-start"
+                    padding="40px 24px"
+                    margin="60px 0"
+                    sx={{
+                      backgorundColor: '#fff',
+                      borderRadius: '8px',
+                      height: '200px',
+                      boxShadow: '0 10px 40px rgba(0, 0, 0, 0.04)',
+                      ':hover': {
+                        background: '#e3e3e3',
+                      },
+                    }}
                   >
-                    <Typography
-                      variant="h4"
-                      color="#183B56"
-                      fontSize="18px"
-                      width="80%"
-                      fontWeight={600}
-                      lineHeight="28px"
-                      sx={{
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                        display: '-webkit-box',
-                        WebkitLineClamp: '2',
-                        WebkitBoxOrient: 'vertical',
-                      }}
+                    <Image
+                      src={get(item, 'file.thumbnails.normal.src')}
+                      alt={get(item, 'name_ru')}
+                      width={120}
+                      height={100}
+                      layout="intrinsic"
+                    />
+                    <Stack
+                      width="100%"
+                      direction="row"
+                      justifyContent="space-between"
+                      alignItems="flex-end"
                     >
-                      {get(item, 'name_ru')}
-                    </Typography>
+                      <Typography
+                        variant="h4"
+                        color="#183B56"
+                        fontSize="18px"
+                        width="80%"
+                        fontWeight={600}
+                        lineHeight="28px"
+                        sx={{
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                          display: '-webkit-box',
+                          WebkitLineClamp: '2',
+                          WebkitBoxOrient: 'vertical',
+                        }}
+                      >
+                        {get(item, 'name_ru')}
+                      </Typography>
 
-                    <ArrowIcon />
+                      <ArrowIcon />
+                    </Stack>
                   </Stack>
-                </Stack>
-              </Link>
-            </SwiperSlide>
-          ))}
+                </Link>
+              </SwiperSlide>
+            ))}
         </Swiper>
       </Box>
     </>
