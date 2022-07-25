@@ -1,4 +1,5 @@
-import { Container } from '@mui/material';
+import { Container, useMediaQuery, useTheme } from '@mui/material';
+import PageBreadcrumb from 'components/breadcrumb';
 import { get } from 'lodash';
 import React from 'react';
 import MainView from './components/product-view-main';
@@ -8,13 +9,21 @@ import DetailsTabs from './components/tabs';
 const ProductDetailsRoute = ({ state }: { state: any }) => {
   const data = get(state, 'data', []);
   const status = get(state, 'status', '');
+  const theme = useTheme();
+  const isMobile = !useMediaQuery(theme.breakpoints.up('md'));
   return (
     <Container maxWidth="xl">
+      <PageBreadcrumb
+        pageData={[
+          { title: 'Филтьр', link: '/filter' },
+          { title: get(data, 'name'), link: '' },
+        ]}
+      />
       {status === 'success' && (
         <>
-          <MainView product={data} />
-          <DetailsTabs product={data} />
-          <RelatedProducts product={data} />
+          <MainView product={data} {...{ isMobile }} />
+          <DetailsTabs product={data} {...{ isMobile }} />
+          <RelatedProducts product={data} {...{ isMobile }} />
         </>
       )}
     </Container>

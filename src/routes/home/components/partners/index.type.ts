@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const PartnersWrapper = styled.div`
-  margin: 140px auto;
+  margin: 100px auto;
 `;
 
 export const ImageWrapper = styled.div<{ isMobile: boolean }>`

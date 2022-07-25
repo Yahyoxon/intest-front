@@ -15,9 +15,11 @@ import {
 const ProductCard = ({
   product,
   isGrid = true,
+  isMobile,
 }: {
   product?: any;
   isGrid?: boolean;
+  isMobile: boolean;
 }) => (
   <Link href={`${Paths.PRODUCT_DETAIL}${get(product, 'slug')}`}>
     {isGrid ? (
@@ -79,7 +81,7 @@ const ProductCard = ({
     ) : (
       <CardWrapperList before="new">
         <Stack direction="row" justifyContent="flex-start">
-          <ProductCardImageList>
+          <ProductCardImageList {...{ isMobile }}>
             <Image
               src={get(product, 'file.thumbnails.normal.src', Default)}
               alt="product_image"

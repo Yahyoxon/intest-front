@@ -10,6 +10,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
+import PageBreadcrumb from 'components/breadcrumb';
 import GridIcon from 'components/icons/grid.icon';
 import ListsIcon from 'components/icons/lists.icon';
 import { useGlobalContext } from 'context/filter';
@@ -47,13 +48,12 @@ const FilterRoute = () => {
   };
 
   return (
-    <Container
-      maxWidth="xl"
-      sx={{ padding: isMobile ? '40px 10px' : '40px 0' }}
-    >
+    <Container maxWidth="xl">
+      <PageBreadcrumb pageData={[{ title: 'Фильтр', link: '/about-us' }]} />
       <Stack
         direction={isMobile ? 'column' : 'row'}
         justifyContent="space-between"
+        sx={{ padding: isMobile ? '40px 10px' : '40px 0' }}
       >
         <Typography
           variant="h1"
@@ -158,13 +158,11 @@ const FilterRoute = () => {
         )}
       </Stack>
       <Stack direction={isMobile ? 'column' : 'row'}>
-        {!isMobile && (
-          <Box sx={{ width: '30%' }}>
-            <SidebarFilter
-              {...{ isMobile, handleFilterOpen, openFilter, setOpenFilter }}
-            />
-          </Box>
-        )}
+        <Box sx={{ width: isMobile ? 0 : '30%' }}>
+          <SidebarFilter
+            {...{ isMobile, handleFilterOpen, openFilter, setOpenFilter }}
+          />
+        </Box>
         <Products {...{ data, isGrid, isFetching, isSuccess, isMobile }} />
       </Stack>
       {get(data, 'last_page') > 1 && (

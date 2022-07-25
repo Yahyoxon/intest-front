@@ -12,21 +12,22 @@ const Products = ({ title }: { title?: string }) => {
   const { data, isLoading, isFetching, isSuccess } = useQuery('products', () =>
     getAllData('/products?include=file&_l=ru')
   );
+  const isGrid = true;
   const theme = useTheme();
   const isMobile = !useMediaQuery(theme.breakpoints.up('md'));
   return (
     <>
       <Typography
-        variant="h1"
-        fontSize="38px"
+        variant="h2"
+        fontSize={isMobile ? '28px' : '38px'}
         fontWeight={600}
         color="#183B56"
-        lineHeight="52px"
+        lineHeight={isMobile ? '42px' : '52px'}
       >
         {title}
       </Typography>
       <Grid container sx={{ flexGrow: 1 }} spacing={2} padding="30px 0">
-        <Grid item xs={12} marginTop="50px">
+        <Grid item xs={12} marginTop="10px" width="100%">
           <Grid
             container
             justifyContent="flex-start"
@@ -45,7 +46,7 @@ const Products = ({ title }: { title?: string }) => {
                   lg={3}
                   sx={{ width: isMobile ? '50%' : '100%' }}
                 >
-                  <ProductCard {...{ product }} />
+                  <ProductCard {...{ product, isMobile }} />
                 </Grid>
               ))}
             {isFetching &&
@@ -61,7 +62,7 @@ const Products = ({ title }: { title?: string }) => {
                     lg={3}
                     sx={{ width: isMobile ? '50%' : '100%' }}
                   >
-                    <ProductSkeleton isGrid />
+                    <ProductSkeleton {...{ isGrid }} />
                   </Grid>
                 ))}
             {!isFetching && get(data, 'data.length') === 0 && (

@@ -22,4 +22,5 @@ export interface Iproduct {
     created_at: Date;
     updated_at: Date;
   };
+  isMobile: boolean;
 }

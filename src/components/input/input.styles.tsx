@@ -14,17 +14,17 @@ export const StyledInput = styled(OutlinedInput)`
     margin-top: ${(props) => props.theme.spacing(3)};
   }
   label & {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
   }
 
   & .MuiInputBase-input {
-    border-radius: 16px;
+    border-radius: 4px;
     font-weight: 400;
     padding: 16px 12px 14px 12px;
     position: relative;
     background-color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     transition: ${(props) =>
       props.theme.transitions.create([
         'border-color',
@@ -50,7 +50,7 @@ export const StyledInput = styled(OutlinedInput)`
   }
 
   & .MuiOutlinedInput-notchedOutline {
-    border-color: #ecf1f4;
+    border-color: #c1d6e9;
     transition: border-color 0.2s linear;
   }
 

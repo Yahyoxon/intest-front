@@ -1,4 +1,12 @@
-import { Container, Box, Button, Stack, Typography } from '@mui/material';
+import {
+  Container,
+  Box,
+  Button,
+  Stack,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from '@mui/material';
 import React from 'react';
 //  eslint-disable-next-line
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,6 +15,7 @@ import catSvg from 'assets/images/svg/cat.svg';
 import Image from 'next/image';
 import ArrowIcon from 'components/icons/arrow.icon';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 import { useQuery } from 'react-query';
 import { getAllData } from 'services/get/all';
 import { get } from 'lodash';
@@ -15,22 +24,24 @@ import { Paths } from 'config/site-paths';
 SwiperCore.use([Navigation, Scrollbar]);
 
 const Categories = () => {
+  const { t } = useTranslation();
   const { data, isLoading, isFetching, isSuccess } = useQuery(
     'categories',
     () => getAllData('/categories?include=file&_l=ru')
   );
-
+  const theme = useTheme();
+  const isMobile = !useMediaQuery(theme.breakpoints.up('md'));
   return (
     <>
       <Container maxWidth="xl" sx={{ paddingTop: '52px' }}>
         <Typography
-          variant="h1"
-          fontSize="38px"
+          variant="h2"
+          fontSize={isMobile ? '28px' : '38px'}
           fontWeight={600}
           color="#183B56"
-          lineHeight="52px"
+          lineHeight={isMobile ? '42px' : '52px'}
         >
-          Популярная категория
+          {t('PopularCategories')}
         </Typography>
         <Stack direction="row" justifyContent="space-between" marginTop="10px">
           <Typography variant="subtitle1" fontSize="18px" fontWeight={400}>
@@ -38,7 +49,7 @@ const Categories = () => {
           </Typography>
         </Stack>
       </Container>
-      <Box>
+      <Box sx={{ paddingLeft: 3 }}>
         <Swiper
           loop={false}
           effect="fade"
@@ -81,6 +92,9 @@ const Categories = () => {
                     borderRadius: '8px',
                     height: '200px',
                     boxShadow: '0 10px 40px rgba(0, 0, 0, 0.04)',
+                    ':hover': {
+                      background: '#e3e3e3',
+                    },
                   }}
                 >
                   <Image

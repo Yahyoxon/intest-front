@@ -7,6 +7,11 @@ const Title = () => (
     justifyContent="center"
     alignItems="center"
     paddingTop="70px"
+    sx={(theme) => ({
+      [theme.breakpoints.down('md')]: {
+        paddingTop: '40px',
+      },
+    })}
   >
     <Typography
       variant="h1"

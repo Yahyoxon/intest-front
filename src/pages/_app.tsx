@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import theme from 'config/mui-config';
 import type { AppProps } from 'next/app';
-
+import { appWithTranslation } from 'next-i18next';
 import 'lib/i18next';
 import { GlobalStyle } from 'config/styles-config';
 import 'config/font.css';
@@ -10,8 +10,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { ThemeProvider } from 'styled-components';
 import { QueryClientProvider, QueryClient, Hydrate } from 'react-query';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { MyGlobalContext } from 'context/filter';
 import { useMemo, useState } from 'react';
+import { GetStaticProps } from 'next';
 
 const MyApp = ({ Component, pageProps }: AppProps | any) => {
   const queryClient = new QueryClient();
@@ -37,4 +39,10 @@ const MyApp = ({ Component, pageProps }: AppProps | any) => {
   );
 };
 
-export default MyApp;
+export default appWithTranslation(MyApp);
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale as string, ['common'])),
+  },
+});

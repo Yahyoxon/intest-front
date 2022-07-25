@@ -16,6 +16,7 @@ import { Controller, useForm } from 'react-hook-form';
 import { get } from 'lodash';
 import axios from 'axios';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 import {
   SearchWrapper,
   ResultsWrapper,
@@ -25,6 +26,7 @@ import {
 } from './index.style';
 
 const Search = () => {
+  const { t } = useTranslation();
   const [data, setData] = useState([]);
   const theme = useTheme();
   const isMobile = !useMediaQuery(theme.breakpoints.up('md'));
@@ -56,7 +58,7 @@ const Search = () => {
             name="search"
             control={control}
             render={({ field }) => (
-              <InputWrapper placeholder="Я ищу ..." {...field} />
+              <InputWrapper placeholder={t('searchPlaceholder')} {...field} />
             )}
           />
           <IconWrapper>
@@ -119,7 +121,8 @@ const Search = () => {
                       sx={{
                         [theme.breakpoints.down('md')]: {
                           padding: '0 10px',
-                          fontSize: '32px',
+                          fontSize: '14px',
+                          lineHeight: '18px',
                         },
                       }}
                     >
@@ -136,7 +139,8 @@ const Search = () => {
                         opacity: 0.5,
                         [theme.breakpoints.down('md')]: {
                           padding: '0 10px',
-                          fontSize: '32px',
+                          fontSize: '12px',
+                          lineHeight: '16px',
                         },
                       }}
                     >

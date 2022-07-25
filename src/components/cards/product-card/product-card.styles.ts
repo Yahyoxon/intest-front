@@ -24,12 +24,12 @@ export const ProductCardImage = styled.div`
     object-fit: cover;
   }
 `;
-export const ProductCardImageList = styled.div`
+export const ProductCardImageList = styled.div<{ isMobile: boolean }>`
   border-radius: 14px;
   height: 200px;
   overflow: hidden;
   position: relative;
-  width: 220px;
+  width: ${(props) => (props.isMobile ? '50%' : '220px')};
   img {
     width: 100%;
     height: 100%;
@@ -73,7 +73,7 @@ export const CardWrapperList = styled.div<{ before?: string }>`
   padding: 10px;
   background-color: #fff;
   position: relative;
-  height: 200px;
+  min-height: 200px;
   &::before {
     content: '${(props) => props.before}';
     padding: 5px;

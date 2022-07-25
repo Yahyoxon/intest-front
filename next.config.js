@@ -5,6 +5,11 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  i18n: {
+    locales: ['en', 'ru'],
+    defaultLocale: 'en',
+  },
+  localePath: './src/locales',
   swcMinify: true,
   images: {
     domains: ['cdn.in-test.uz'],

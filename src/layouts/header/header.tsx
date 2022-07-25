@@ -43,7 +43,7 @@ const Header = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
           <Link href="/">
-            <Box sx={{ zIndex: 9999 }}>
+            <Box sx={{ zIndex: 99 }}>
               <LogoIcon />
             </Box>
           </Link>

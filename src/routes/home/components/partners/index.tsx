@@ -17,10 +17,10 @@ const Partners = () => {
     <PartnersWrapper>
       <Typography
         variant="h2"
-        fontSize="38px"
+        fontSize={isMobile ? '28px' : '38px'}
         fontWeight={600}
         color="#183B56"
-        lineHeight="52px"
+        lineHeight={isMobile ? '42px' : '52px'}
         textAlign="center"
       >
         Наши партнеры

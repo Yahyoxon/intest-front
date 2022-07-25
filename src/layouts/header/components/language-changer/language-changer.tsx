@@ -1,18 +1,12 @@
 import * as React from 'react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import { Button, Stack, Typography } from '@mui/material';
-import ArrowDown from 'components/icons/arrow-down.icon';
-import FlagUzIcon from 'components/icons/flag-uz.icon';
-
-const languages = ['Ru', 'EN'];
+import { useRouter } from 'next/router';
+import { Button, Stack } from '@mui/material';
+import Link from 'next/link';
 
 const LanguageChanger = () => {
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
-
+  const { locale, locales, asPath } = useRouter();
+  const selectedLangIndex: number | undefined = locales?.indexOf(locale!);
+  const [selectedIndex, setSelectedIndex] = React.useState(selectedLangIndex);
   const handleSelectLang = (index: number) => {
     setSelectedIndex(index);
   };
@@ -27,25 +21,26 @@ const LanguageChanger = () => {
         height: '35px',
       }}
     >
-      {languages.map((lang, i) => (
-        <Button
-          key={lang}
-          sx={{
-            color: selectedIndex === i ? '#fff' : '#E2A412',
-            fontSize: '13px',
-            fontWeight: 700,
-            background: selectedIndex === i ? '#E2A412' : 'transparent',
-            borderRadius: '88px',
-            padding: 0,
-            ':hover': {
-              backgroundColor:
-                selectedIndex === i ? '#E2A412!important' : 'transparent',
-            },
-          }}
-          onClick={() => handleSelectLang(i)}
-        >
-          {lang}
-        </Button>
+      {locales?.map((lang, i) => (
+        <Link key={lang} href={asPath} locale={lang}>
+          <Button
+            sx={{
+              color: selectedIndex === i ? '#fff' : '#E2A412',
+              fontSize: '13px',
+              fontWeight: 700,
+              background: selectedIndex === i ? '#E2A412' : 'transparent',
+              borderRadius: '88px',
+              padding: 0,
+              ':hover': {
+                backgroundColor:
+                  selectedIndex === i ? '#E2A412!important' : 'transparent',
+              },
+            }}
+            onClick={() => handleSelectLang(i)}
+          >
+            {lang.toUpperCase()}
+          </Button>
+        </Link>
       ))}
     </Stack>
   );

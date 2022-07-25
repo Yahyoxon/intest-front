@@ -7,7 +7,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import { get } from 'lodash';
 import { Iproduct } from 'routes/product-details/product.type';
 
-const DetailsTabs: React.FC<Iproduct> = ({ product }) => {
+const DetailsTabs: React.FC<Iproduct> = ({ product, isMobile }) => {
   const [value, setValue] = React.useState('1');
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -20,12 +20,14 @@ const DetailsTabs: React.FC<Iproduct> = ({ product }) => {
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList
             onChange={handleChange}
-            aria-label="lab API tabs example"
             sx={{
+              overflowX: 'scroll',
+              width: '100%',
+
               '& .MuiTab-root.Mui-selected': { color: '#E2A412!important' },
               '& .MuiTabs-indicator': {
                 backgroundColor: '#E2A412!important',
-                height: '1px',
+                height: '2px',
               },
             }}
           >

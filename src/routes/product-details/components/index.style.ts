@@ -7,6 +7,7 @@ export const ImageWrapper = styled.div`
   align-items: center;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
+  overflow: hidden;
   img {
     width: 100%;
   }
