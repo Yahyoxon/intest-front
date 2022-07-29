@@ -1,7 +1,6 @@
 import {
   Container,
   Box,
-  Button,
   Stack,
   Typography,
   useTheme,
@@ -10,8 +9,7 @@ import {
 import React from 'react';
 //  eslint-disable-next-line
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination, Scrollbar } from 'swiper';
-import catSvg from 'assets/images/svg/cat.svg';
+import SwiperCore, { Navigation, Scrollbar } from 'swiper';
 import Image from 'next/image';
 import ArrowIcon from 'components/icons/arrow.icon';
 import Link from 'next/link';

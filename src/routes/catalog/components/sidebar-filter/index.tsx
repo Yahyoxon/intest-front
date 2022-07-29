@@ -19,6 +19,7 @@ import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import CancelIcon from '@mui/icons-material/Cancel';
+import { useRouter } from 'next/router';
 
 const SidebarFilter = ({
   isMobile,
@@ -33,10 +34,11 @@ const SidebarFilter = ({
 }) => {
   const { setFilterCat } = useGlobalContext();
   const [open, setOpen] = useState(false);
+  const { locale } = useRouter();
 
   const { data, isLoading, isFetching, isSuccess } = useQuery(
     'categories',
-    () => getAllData('/categories?include=category&_l=ru')
+    () => getAllData(`/categories?include=category&_l=${locale}`)
   );
 
   const handleClick = (index: number) => {

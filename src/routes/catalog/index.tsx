@@ -23,6 +23,7 @@ import Products from './components/products';
 import SidebarFilter from './components/sidebar-filter';
 
 const FilterRoute = () => {
+  const { locale } = useRouter();
   const [isGrid, setIsGrid] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [openFilter, setOpenFilter] = useState(false);
@@ -30,13 +31,13 @@ const FilterRoute = () => {
   const { query } = useRouter();
   const theme = useTheme();
   const isMobile = !useMediaQuery(theme.breakpoints.up('md'));
-  const { data, isLoading, isFetching, isSuccess } = useQuery(
+  const { data, isFetching, isSuccess } = useQuery(
     ['products', { currentPage, filterCat }],
     () =>
       getAllData(
         `/products?include=file,categories&page=${currentPage}&per_page=15&category_id=${
           filterCat || ''
-        }&_l=ru`
+        }&_l=${locale}}`
       )
   );
   useEffect(() => {

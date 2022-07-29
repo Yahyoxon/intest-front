@@ -1,15 +1,17 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Button, Stack } from '@mui/material';
 import Link from 'next/link';
 
 const LanguageChanger = () => {
-  const { locale, locales, asPath } = useRouter();
-  const selectedLangIndex: number | undefined = locales?.indexOf(locale!);
+  const { locale, locales, asPath, defaultLocale } = useRouter();
+  const selectedLangIndex = locales?.indexOf(locale!);
   const [selectedIndex, setSelectedIndex] = React.useState(selectedLangIndex);
   const handleSelectLang = (index: number) => {
     setSelectedIndex(index);
   };
+
+  console.log(locale!);
   return (
     <Stack
       justifyContent="space-between"

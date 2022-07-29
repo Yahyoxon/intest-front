@@ -38,11 +38,10 @@ const MyApp = ({ Component, pageProps }: AppProps | any) => {
     </MyGlobalContext.Provider>
   );
 };
+// export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+//   props: {
+//     ...(await serverSideTranslations(locale as string, ['common'])),
+//   },
+// });
 
 export default appWithTranslation(MyApp);
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale as string, ['common'])),
-  },
-});
